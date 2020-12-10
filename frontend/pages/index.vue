@@ -16,6 +16,9 @@
           <span>login</span>
         </nuxt-link>
       </div>
+      <a href="https://rails-app-20200927.auth.ap-northeast-1.amazoncognito.com/oauth2/authorize?identity_provider=Google&response_type=token&client_id=ume2e13blds4nst4kkecu1nnr&redirect_uri=http://localhost:3333/callback
+
+">アンカーテキスト</a>
 
       <button class="button is-primary" @click="ping">Ping</button>
       <button class="button is-danger" @click="secured">Secured</button>
@@ -24,6 +27,8 @@
 </template>
 
 <script>
+import AWS from 'aws-sdk'
+console.log(AWS)
 export default {
   methods: {
     loggedIn() {
@@ -35,9 +40,8 @@ export default {
         console.log(ret)
       },
       async secured() {
-        console.log(this.$auth0.getIdToken())
         const ret = await
-        this.$axios.$get('/api/v1/secured', { headers: {Authorization: 'Bearer' + this.$auth0.getIdToken()}})
+        this.$axios.$get('/api/v1/secured', { headers: {Authorization: 'Bearer: ' + this.$auth0.getIdToken()}})
         console.log(ret)
       }
     }

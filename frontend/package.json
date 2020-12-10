@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/proxy": "^2.0.1",
     "auth0-lock": "^11.27.0",
+    "aws-sdk": "^2.765.0",
     "core-js": "^3.6.5",
     "jwt-decode": "^3.0.0-beta.2",
     "nuxt": "^2.0.0",

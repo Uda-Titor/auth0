@@ -5,6 +5,7 @@
 <script>
 export default {
   mounted() {
+    debugger;
     this.$auth0.setTokenByQuery()
     this.$router.replace('/')
   }

@@ -39,6 +39,17 @@ class Auth0Util {
     this.setToken(this.getQueryParams());
   }
 
+  setTokenByQueryCognito() {
+    const code = this.$route.query.code
+    const localStorage = window.localStorage
+    if (!code || localStorage.getItem("loginStatus") == "logined") { return }
+
+    const paramas = {
+      "grant_type": "authorization_code",
+      "redirect_uri": ""
+    }
+  }
+
   isAuthenticated() {
     const expiresAt = window.localStorage.getItem('expiresAt')
       return new Date().getTime() < expiresAt
